@@ -4,19 +4,19 @@
  * 提供给应用程序实现C控制器，采用抽象类设计模式
  * public: 提供用户的接口; protected: 内部函数，用户透明;
  * 
- * @author Eyes
+ * @author Nightink
  * @date 2012-11-20
  * @package Core 核心包
  */
 abstract class Controller {
-	protected $_view = "";
-	protected $name = '';
+    protected $_view = "";
+    protected $name = '';
 
-	public function __construct() {
-		$this->_view = Tr::getInstance('View');
-	}
+    public function __construct() {
+        $this->_view = Tr::getInstance('View');
+    }
 
-	/**     
+    /**     
      * 获取当前控制器名称
      */
     protected function getActionName() {
@@ -26,8 +26,8 @@ abstract class Controller {
         }
         return $this->name;
     }
-	
-	//判断客户端是否是Ajax方式提交
+
+    //判断客户端是否是Ajax方式提交
     protected function isAjax() {
         if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) ) {
             if('xmlhttprequest' == strtolower($_SERVER['HTTP_X_REQUESTED_WITH']))
@@ -38,15 +38,15 @@ abstract class Controller {
             return true;
         return false;
     }
-	
-	protected function assign($strKey='', $value = NULL) {
-		$this->_view->assign($strKey, $value);
-	}
-	
-	//页面数据返回给客户端
-	protected function display($tplName = '') {
-		$this->_view->display($tplName);
-	}
+
+    protected function assign($strKey='', $value = NULL) {
+        $this->_view->assign($strKey, $value);
+    }
+
+    //页面数据返回给客户端
+    protected function display($tplName = '') {
+        $this->_view->display($tplName);
+    }
 
     /**
      * 操作错误跳转的快捷方法
@@ -120,8 +120,8 @@ abstract class Controller {
     }
     
     public function errorMethod() {
-    	header('Content-Type:text/html; charset:utf-8');
-    	echo '
+        header('Content-Type:text/html; charset:utf-8');
+        echo '
 <!DOCTYPE html>
 <html>
 <head>
@@ -129,7 +129,7 @@ abstract class Controller {
     <meta charset="utf-8" />
     <title></title>
     <style type="text/css">
-    	body{ background: #cff;}
+        body{ background: #cff;}
         #error{
             border: 1px solid #0000ff; margin: auto; margin-top: 40px;
             width: 300px; height: 150px; line-height: 150px;
@@ -143,7 +143,7 @@ abstract class Controller {
     </div>
 </body>
 </html>
- 			';
+            ';
     }
 
 }

@@ -7,9 +7,9 @@
 
 class Page extends Think {
     // 起始行数
-    public $firstRow	;
+    public $firstRow    ;
     // 列表每页显示行数
-    public $listRows	;
+    public $listRows    ;
     // 页数跳转时要带的参数
     public $parameter  ;
     // 分页总页面数
@@ -22,8 +22,8 @@ class Page extends Think {
     protected $coolPages   ;
     // 分页栏每页显示的页数
     protected $rollPage   ;
-	// 分页显示定制
-    protected $config  =	array('header'=>'条记录','prev'=>'上一页','next'=>'下一页','first'=>'第一页','last'=>'最后一页','theme'=>' %totalRow% %header% %nowPage%/%totalPage% 页 %upPage% %downPage% %first%  %prePage%  %linkPage%  %nextPage% %end%');
+    // 分页显示定制
+    protected $config = array('header'=>'条记录','prev'=>'上一页','next'=>'下一页','first'=>'第一页','last'=>'最后一页','theme'=>' %totalRow% %header% %nowPage%/%totalPage% 页 %upPage% %downPage% %first%  %prePage%  %linkPage%  %nextPage% %end%');
 
     /**
      +----------------------------------------------------------
@@ -122,7 +122,7 @@ class Page extends Think {
                 }
             }
         }
-        $pageStr	 =	 str_replace(
+        $pageStr = str_replace(
             array('%header%','%nowPage%','%totalRow%','%totalPage%','%upPage%','%downPage%','%first%','%prePage%','%linkPage%','%nextPage%','%end%'),
             array($this->config['header'],$this->nowPage,$this->totalRows,$this->totalPages,$upPage,$downPage,$theFirst,$prePage,$linkPage,$nextPage,$theEnd),$this->config['theme']);
         return $pageStr;

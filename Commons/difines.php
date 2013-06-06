@@ -3,7 +3,7 @@
  * Thorns框架公共路径定义
  * 框架核心包自动引入
  *
- * @author Eyes
+ * @author Nightink
  * @date 2012-11-16
  */
 
