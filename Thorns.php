@@ -2,7 +2,7 @@
 /**
  * Thorns框架入口文件
  *
- * @author Eyes
+ * @author Nightink
  * @date 2012-11-20
  */
 
