@@ -29,7 +29,7 @@ class App {
     public function run() {
         $this->init();
         $this->parseR();
-        $this->verifUser();
+        $this->verifyUser();
         $this->buildApp();
     }
 
@@ -73,14 +73,12 @@ class App {
         }
     }
 
-    //用户控制、控制
-    protected function verifUser() {
+    //用户控制
+    protected function verifyUser() {
         if(C('UESR_DNS') && C('CLASS') !== C('NOT_C') && ! $_SESSION[C('USER_KEY')]) {
             $ver = explode('/', C('DEF_DNS'));
-            //var_dump($ver);
             C('CLASS', $ver[0]);
             C('METHOD', $ver[1]);
-            //echo '------';
         }
     }
 
@@ -99,4 +97,3 @@ class App {
         }
     }
 }
-?>

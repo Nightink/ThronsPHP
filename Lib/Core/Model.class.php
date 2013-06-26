@@ -269,5 +269,3 @@ class Model {
         $this->status = null;
     }
 }
-
-?>

@@ -28,5 +28,3 @@ class TrException extends Exception {
         trigger_error($errmsg, $errtype);
     }
 }
-
-?>
