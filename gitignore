@@ -16,4 +16,3 @@ Thumbs.db
 *.pyc
 *.pyo
 build
-node_modules
